@@ -25,12 +25,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        menu();
         rb2d.MovePosition(rb2d.position + movement.normalized * speed * Time.fixedDeltaTime);
-    }
-
-    void menu() {
-        if (Input.GetKey("escape"))
-            Application.Quit();
     }
 }
