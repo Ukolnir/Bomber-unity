@@ -27,4 +27,12 @@ public class PlayerController : MonoBehaviour
     {
         rb2d.MovePosition(rb2d.position + movement.normalized * speed * Time.fixedDeltaTime);
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "Enemy") {
+            //Debug.Log("It's working");
+            PauseMenuController.GameIsOver = true;
+        }
+    }
 }
